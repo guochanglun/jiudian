@@ -322,6 +322,7 @@ public class ComServlet extends HttpServlet {
 					request.getRequestDispatcher("admin/jz/index.jsp").forward(request, response);
 				}  
 		} 
+		
 		else if(method.equals("deljz")){//删除结账信息  
 			String id = request.getParameter("id");  
 			int flag = cBean.comUp("delete from rz where id='"+id+"'");
@@ -355,7 +356,11 @@ public class ComServlet extends HttpServlet {
 			String tz = request.getParameter("tz");  
 			String jdid = request.getParameter("jdid");
 			int flag = cBean.comUp("update dd set sh='"+sh+"',tz='"+tz+"' where id='"+id+"'");
-			int flag2 = cBean.comUp("update jd set zt='预定' where id="+jdid);
+			if("已通过".equals(sh)){
+				cBean.comUp("update jd set zt='预定' where id="+jdid);
+			}else{
+				cBean.comUp("update jd set zt='空闲' where id="+jdid);
+			}
 			if(flag == Constant.SUCCESS){  
 				request.setAttribute("message", "操作成功！");
 				request.getRequestDispatcher("admin/dd/index.jsp").forward(request, response);
