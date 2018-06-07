@@ -32,7 +32,7 @@ public class DBO {
 		try 
 		{
 			Class.forName("com.mysql.jdbc.Driver"); 
-			conn=DriverManager.getConnection("jdbc:mysql://localhost/jiudian?useUnicode=true&characterEncoding=gb2312","root","123"); 
+			conn=DriverManager.getConnection("jdbc:mysql://localhost/jiudian?useUnicode=true&characterEncoding=gb2312","root","root"); 
 			stmt=conn.createStatement();
 			System.out.println("打开数据库连接");
 		} 
