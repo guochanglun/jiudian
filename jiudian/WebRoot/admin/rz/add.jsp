@@ -84,7 +84,7 @@ String message = (String)request.getAttribute("message");
      <td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">¿Í·¿Ãû³Æ£º</td>
      <td><select name="mc" required>
     <%if(method.equals("uprz")){ %><option value="<%=mc%>"><%=mc%></option> <%} %> 
-    <%List gzlist=cb.getCom("select * from jd where zt='¿ÕÏÐ' order by id asc",2);if(!gzlist.isEmpty()){for(int i=0;i<gzlist.size();i++){List list2=(List)gzlist.get(i);%>
+    <%List gzlist=cb.getCom("select * from jd order by id asc",2);if(!gzlist.isEmpty()){for(int i=0;i<gzlist.size();i++){List list2=(List)gzlist.get(i);%>
     <option value=<%=list2.get(1).toString() %>><%=list2.get(1).toString() %></option>
     <%}} %>
     </select></td> 

@@ -62,6 +62,7 @@ String message = (String)request.getAttribute("message");
 	}
 	else{ 
 		String method=request.getParameter("method");  
+		String jdid=request.getParameter("jdid");  
 		String id=request.getParameter("id");   
 %>
 <body>
@@ -78,6 +79,7 @@ String message = (String)request.getAttribute("message");
         </select></td> 
      </tr> 
      <tr><input type="hidden" name="method" value="<%=method%>" /><input type="hidden" name="id" value="<%=id%>" /> 
+     <tr><input type="hidden" name="jdid" value="<%=jdid%>" />
      <td width="40%" align="right" nowrap="nowrap" bgcolor="#f1f1f1">·¢ËÍ¶ÌÐÅ£º</td>
      <td><input type="text" name="tz" class="span4" required/></td> 
      </tr> 

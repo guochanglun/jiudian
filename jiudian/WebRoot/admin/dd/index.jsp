@@ -169,7 +169,7 @@ String message = (String)request.getAttribute("message");
          <td nowrap="nowrap"><%=pagelist2.get(12).toString() %></td>   
          <td nowrap="nowrap"><%=pagelist2.get(13).toString() %></td>           
          <td nowrap="nowrap">  
-         <a href="<%=basePath%>admin/dd/sh.jsp?method=shdd&id=<%=pagelist2.get(0).toString()%>">处理</a>
+         <a href="<%=basePath%>admin/dd/sh.jsp?method=shdd&id=<%=pagelist2.get(0).toString()%>&jdid=<%=pagelist2.get(1).toString()%>">处理</a>
          <a href="<%=basePath%>ComServlet?method=deldd2&id=<%=pagelist2.get(0).toString()%>">删除</a>
          </td>
        </tr>

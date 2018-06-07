@@ -48,16 +48,6 @@ public class ComServlet extends HttpServlet {
 		doPost(request,response);
 	}
 
-	/**
-	 * The doPost method of the servlet. <br>
-	 *
-	 * This method is called when a form has its tag value method equals to post.
-	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
-	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -146,7 +136,7 @@ public class ComServlet extends HttpServlet {
 			int flag = cBean.comUp("insert into dd(jdid,mc,fl,jg,sl,zj,member,sj,dd,ddh)  " +
 					"values('"+jdid+"','"+mc+"','"+fl+"','"+jg+"','"+sl+"','"+zj+"','"+member+"','"+date+"','"+dd+"','"+ddh+"')");
 			if(flag == Constant.SUCCESS){ 
-				cBean.comUp("update jd set zt='预定' where id='"+jdid+"'");
+				//cBean.comUp("update jd set zt='预定' where id='"+jdid+"'");
 				request.setAttribute("message", "操作成功！");
 				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
@@ -363,7 +353,9 @@ public class ComServlet extends HttpServlet {
 			String id=request.getParameter("id");
 			String sh = request.getParameter("sh");  
 			String tz = request.getParameter("tz");  
+			String jdid = request.getParameter("jdid");
 			int flag = cBean.comUp("update dd set sh='"+sh+"',tz='"+tz+"' where id='"+id+"'");
+			int flag2 = cBean.comUp("update jd set zt='预定' where id="+jdid);
 			if(flag == Constant.SUCCESS){  
 				request.setAttribute("message", "操作成功！");
 				request.getRequestDispatcher("admin/dd/index.jsp").forward(request, response);
