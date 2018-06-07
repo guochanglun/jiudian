@@ -2,8 +2,6 @@ package com.util;
 
 /**
  * 常用方法类
- * 
- * 
  */
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

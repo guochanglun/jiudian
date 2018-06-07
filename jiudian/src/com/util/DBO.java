@@ -14,6 +14,10 @@ import java.sql.Statement;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 
+/**
+ * 连接数据库
+ *
+ */
 public class DBO {
 
 	private Connection conn;
