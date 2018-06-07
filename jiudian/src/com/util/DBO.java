@@ -72,7 +72,7 @@ public class DBO {
 	{
 		ResultSet rs = null;
 		
-
+		// 执行sql语句，sql比如：select * from xxx
 		rs = stmt.executeQuery(sql);
 		System.out.println ("执行查询");
 		return rs;
@@ -85,7 +85,7 @@ public class DBO {
 	{
 		int ret = 0;
 		
-	
+		// 可以用来执行增删改
 		ret = stmt.executeUpdate(sql);
 	
 		System.out.println ("执行增删改");
@@ -107,19 +107,18 @@ public class DBO {
 	{
 		boolean isAuto=conn.getAutoCommit();
 		
+		// 设置不自动提交事务
 		conn.setAutoCommit(false);
 		int [] updateCounts = stmt.executeBatch();
-		
-//		conn.commit();
-		
-//		conn.setAutoCommit(isAuto);
-		//conn.setAutoCommit(true);
 		return updateCounts;
 	}
+	
+	// 获取是否自动提交事务
 	public boolean getAutoCommit() throws SQLException
 	{
 		return conn.getAutoCommit();
 	}
+	
 	public void setAutoCommit(boolean auto)  throws SQLException 
 	{
 		conn.setAutoCommit(auto);
@@ -128,12 +127,12 @@ public class DBO {
 	public void commit() throws SQLException 
 	{
 		conn.commit();
-//		this.close();
 	}
+	
+	// 回滚事务
 	public void rollBack() throws SQLException 
 	{
 		conn.rollback();
-//		this.close();
 	}
 	
 }

@@ -1,7 +1,6 @@
 package com.util;
 /**
  * ³£Á¿
- * @author Administrator
  *
  */
 public final class Constant {

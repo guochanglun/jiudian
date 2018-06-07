@@ -43,6 +43,7 @@ public class AdminServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		// …Ë÷√
 		response.setContentType(Constant.CONTENTTYPE);
 		request.setCharacterEncoding(Constant.CHARACTERENCODING);
 		String date=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());

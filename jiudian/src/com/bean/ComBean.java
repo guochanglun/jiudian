@@ -80,6 +80,7 @@ public class ComBean {
     }
     
 	
+    // 执行sql语句
 	public int comUp(String sql){
 		DBO dbo = new DBO();
 		dbo.open();
@@ -98,6 +99,7 @@ public class ComBean {
 			dbo.close();
 		}
 	}
+	
 	public List getCom(String sql,int row){ 
 		DBO dbo = new DBO();
 		list = new ArrayList();
@@ -138,6 +140,8 @@ public class ComBean {
 			dbo.close();
 		}
 	}
+	
+	// 假如sql：select name(0), age(1), sex(2) from people;
 	public String getString(String sql){ 
 		DBO dbo = new DBO();
 		list = new ArrayList();
@@ -154,6 +158,8 @@ public class ComBean {
 			dbo.close();
 		}
 	}
+	
+	// 执行sql，获取sql中的总数：select count(*) from table
 	public int getCount(String sql){
 		DBO dbo = new DBO();
 		dbo.open();
@@ -168,6 +174,8 @@ public class ComBean {
 			dbo.close();
 		}
 	}
+	
+	// 执行sql，获取sql中的总数：select count(*) from table
 	public float getFloat(String sql){
 		DBO dbo = new DBO();
 		dbo.open();

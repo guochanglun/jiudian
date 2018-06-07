@@ -34,7 +34,7 @@ public final class Common {
 	
 	/////////////数据库输出字符串的过滤
 	public static String SQLStr(String str){
-	
+		
 		if(str != null && str.length()>1 && str.substring(0,1).equals("?")){
 			str = str.substring(1);
 		}
@@ -50,12 +50,14 @@ public final class Common {
 		if(str==null || str.trim().equals("") || str.equals(" ")||str.equals("null")){
 			str = "";
 		}
+		// trim：删除字符串前后的空格
 		str = str.trim();
 		return str;
 	}
 	/////////////格式化日期	
 	public static String formatRZ(String oldDate){
 	
+		// 日期格式化，按照："yyyy-MM-dd"
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		Date Date = new Date(oldDate);
 		return df.format(Date);
@@ -68,7 +70,9 @@ public final class Common {
 			str="";
 		}
 		try{
+			// 使用iso-8859-1编码获取字节数组
 			byte b[]=str.getBytes("iso-8859-1");
+			// 使用字节数组生成新字符串
 			str=new String(b);
 			str=str.trim();
 		}catch(Exception e){
