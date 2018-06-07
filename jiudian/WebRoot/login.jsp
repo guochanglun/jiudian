@@ -25,7 +25,9 @@ function lost() {
 			<td class="rltitle daslist">&nbsp;&nbsp;&nbsp;&nbsp;注册用户登录</td> 
          </tr>
 	     <tr class="tr1">
-			<td class="rldatee daslist">登录帐号：</td><input type=hidden name=method value="mlogin"/><input type=hidden name=sf value="注册用户"/>
+			<td class="rldatee daslist">登录帐号：</td>
+			<input type=hidden name=method value="mlogin"/>
+			<input type=hidden name=sf value="注册用户"/>
             <td class="rltitle dotlist"><input type="text" size="30" name="username" required /></td> 
          </tr> 
          <tr class="tr1">

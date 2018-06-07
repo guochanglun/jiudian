@@ -89,7 +89,6 @@ public class ComServlet extends HttpServlet {
 				request.getRequestDispatcher("admin/fl/index.jsp").forward(request, response);
 			}
 		} 
-		 
 		
 		else if(method.equals("deljd")){ //É¾³ý¿Í·¿
 			String id = request.getParameter("id"); 
